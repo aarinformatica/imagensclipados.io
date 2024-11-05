@@ -1,0 +1,1271 @@
+@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+body, html {
+    background: #F0FFFF;
+    height: 100%;
+    margin: 0;
+    font-family: "Luckiest Guy", cursive;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    background-image: url('https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/fundoclipados.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 1001;
+}
+/*log header*/
+header {
+    position: relative;
+    text-align: center;
+    height: 100px; /* Altura do header */
+    background-color: #111; /* Cor de fundo para destaque */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container {
+    position: relative;
+}
+
+.logo {
+    max-width: 200px; /* Define a largura máxima da logo */
+    height: auto; /* Mantém a proporção original da logo */
+    border-radius: 10px; /* Bordas arredondadas para um visual mais elegante */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+header h1 span {
+    transform: scale(0.9);
+    display: inline-block;
+}
+
+header h1 span:first-child {
+    color: #1E90FF;
+    text-shadow: 0 0 10px #DCDCDC, 0 0 20px #DCDCDC, 0 0 30px #DCDCDC, 0 0 40px #DCDCDC;
+    animation: bop 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards infinite alternate,
+               neon-red 1s ease-in-out infinite alternate;
+}
+
+header h1 span:last-child {
+    color: red;
+    text-shadow: 0 0 10px #DCDCDC, 0 0 20px #DCDCDC, 0 0 30px #DCDCDC, 0 0 40px #DCDCDC;
+    animation: bopB 1s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards infinite alternate,
+               neon-blue 1s ease-in-out infinite alternate;
+}
+
+@keyframes bop {
+    0% {
+        transform: scale(0.9);
+    }
+    50%, 100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bopB {
+    0% {
+        transform: scale(0.9);
+    }
+    80%, 100% {
+        transform: scale(1) rotateZ(-3deg);
+    }
+}
+
+@keyframes neon-red {
+    from {
+        text-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00, 0 0 40px #FFFF00;
+    }
+    to {
+        text-shadow: 0 0 20px #FFFF00, 0 0 30px #FFFF00, 0 0 40px #FFFF00, 0 0 50px #FFFF00;
+    }
+}
+
+@keyframes neon-blue {
+    from {
+        text-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00, 0 0 40px #FFFF00;
+    }
+    to {
+        text-shadow: 0 0 20px #FFFF00, 0 0 30px #FFFF00, 0 0 40px #FFFF00, 0 0 50px #FFFF00;
+    }
+}
+
+main {
+    margin-top: 120px; /* Espaço para o header fixo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.menu li {
+    position: relative;
+    display: inline;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #7B68EE;
+    font-size: 1em;
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
+}
+
+.menu li a:hover {
+    color: #333;
+    background-color: #FFDC00;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    background-color: #111;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submenu li {
+    width: 100%;
+}
+
+.submenu li a {
+    padding: 10px 15px;
+    display: block;
+    color: #7B68EE;
+}
+
+.submenu li a:hover {
+    background-color: #FFDC00;
+    color: #333;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: none; /* Inicialmente escondido */
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2em;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons a::after {
+    content: attr(data-title); /* Exibe o nome das redes sociais */
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.social-icons a:hover::after {
+    opacity: 1;
+}
+
+.social-icons .pix {
+    color: #4caf50; /* Verde para Pix */
+}
+
+.social-icons .instagram {
+    color: #e4405f; /* Rosa para Instagram */
+}
+
+.social-icons .tiktok {
+    color: #010101; /* Preto para TikTok */
+}
+
+.social-icons .youtube {
+    color: #ff0000; /* Vermelho para YouTube */
+}
+
+.social-icons .twitch {
+    color: #6441a5; /* Roxo para Twitch */
+}
+
+.social-icons .discord {
+    color: #7289da; /* Azul para Discord */
+}
+
+.modal {
+    display: flex; /* Exibir modal ao carregar a página */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index:10001;
+}
+
+.modal-content {
+    background-color: #F5F5F5; /* Tom de amarelo azulado quase roxo */
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-out;
+    color: black;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .menu li a {
+        font-size: 1em;
+    }
+
+    .social-icons a {
+        font-size: 1.5em;
+    }
+}
+.espaco{
+  opacity:0%;
+}
+@media (max-width: 768px) {
+    .menu li a {
+        font-size: 10px;
+    }
+}
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .counter {
+        font-size: 1.5em;
+    }
+}
+.social-icons {
+    margin-top: 20px;
+    display: none; /* Inicialmente escondido */
+    gap: 20px;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Efeito de transição */
+}
+
+.social-icons.show {
+    display: flex;
+    opacity: 1;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2em;
+    transition: color 0.3s, transform 0.3s, opacity 0.3s; /* Inclui transição de opacidade */
+    position: relative;
+}
+
+.social-icons a:hover ~ a {
+    opacity: 0;
+}
+
+.social-icons a:not(:hover) {
+    opacity: 0;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2em;
+    transition: color 0.3s, transform 0.3s, opacity 0.3s;
+    position: relative;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons a:not(:hover) {
+    opacity: 0.2;
+}
+
+.social-icons a:hover ~ a {
+    opacity: 0.2;
+}
+
+.social-icons a:hover {
+    opacity: 1;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2em;
+    transition: color 0.3s, transform 0.3s, opacity 0.3s;
+    position: relative;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons a:not(:hover) {
+    opacity: 0.2;
+}
+
+.social-icons a:hover ~ a {
+    opacity: 0.2;
+}
+
+.social-icons a:hover {
+    opacity: 1;
+}
+
+.social-icons a::after {
+    content: attr(data-title); /* Exibe o nome das redes sociais */
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 3px 7px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    font-size: 0.8em; /* Fonte menor */
+    font-family: 'Luckiest Guy', cursive; /* Mantém a fonte anterior */
+}
+
+.social-icons a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1); /* Animação de crescimento */
+}
+.social-icons a {
+    color: white;
+    font-size: 2em;
+    transition: color 0.3s, transform 0.3s, opacity 0.3s;
+    position: relative;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons a:not(:hover) {
+    opacity: 0.2;
+}
+
+.social-icons a:hover ~ a {
+    opacity: 0.2;
+}
+
+.social-icons a:hover {
+    opacity: 1;
+}
+
+.social-icons a::after {
+    content: attr(data-title); /* Exibe o nome das redes sociais */
+    position: absolute;
+    bottom: -35px; /* Move a descrição mais abaixo */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 3px 7px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    font-size: 0.8em; /* Fonte menor */
+    font-family: 'Luckiest Guy', cursive; /* Mantém a fonte anterior */
+}
+
+.social-icons a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1); /* Animação de crescimento */
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px; /* Aumenta a margem para afastar dos ícones */
+    font-size: 2em;
+    color: white;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .counter {
+        font-size: 1.5em;
+    }
+}
+.social-icons {
+    margin-top: 20px;
+    display: none; /* Inicialmente escondido */
+    gap: 20px;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Efeito de transição */
+}
+
+.social-icons.show {
+    display: flex;
+    opacity: 1;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2em;
+    transition: color 0.3s, transform 0.3s, opacity 0.3s;
+    position: relative;
+    animation: fall 0.5s ease-out;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons a:not(:hover) {
+    opacity: 0.2;
+}
+
+.social-icons a:hover ~ a {
+    opacity: 0.2;
+}
+
+.social-icons a:hover {
+    opacity: 1;
+}
+
+.social-icons a::after {
+    content: attr(data-title); /* Exibe o nome das redes sociais */
+    position: absolute;
+    bottom: -35px; /* Move a descrição mais abaixo */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 3px 7px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    font-size: 0.8em; /* Fonte menor */
+    font-family: 'Luckiest Guy', cursive; /* Mantém a fonte anterior */
+}
+
+.social-icons a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1); /* Animação de crescimento */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.social-icons {
+    margin-top: 20px;
+    display: none; /* Inicialmente escondido */
+    gap: 20px;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Efeito de transição */
+}
+
+.social-icons.show {
+    display: flex;
+    opacity: 1;
+    animation: slideIn 0.5s ease-out;
+}
+
+.social-icons.hide {
+    animation: slideOut 0.5s ease-out;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2em;
+    transition: color 0.3s, transform 0.3s, opacity 0.3s;
+    position: relative;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons a:not(:hover) {
+    opacity: 0.2;
+}
+
+.social-icons a:hover ~ a {
+    opacity: 0.2;
+}
+
+.social-icons a:hover {
+    opacity: 1;
+}
+
+.social-icons a::after {
+    content: attr(data-title); /* Exibe o nome das redes sociais */
+    position: absolute;
+    bottom: -35px; /* Move a descrição mais abaixo */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 3px 7px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    font-size: 0.8em; /* Fonte menor */
+    font-family: 'Luckiest Guy', cursive; /* Mantém a fonte anterior */
+}
+
+.social-icons a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1); /* Animação de crescimento */
+}
+
+.social-icons a:nth-child(1) {
+    animation: fall 0.5s ease-out;
+}
+
+.social-icons a:nth-child(2) {
+    animation: fall 0.5s ease-out 0.1s;
+}
+
+.social-icons a:nth-child(3) {
+    animation: fall 0.5s ease-out 0.2s;
+}
+
+.social-icons a:nth-child(4) {
+    animation: fall 0.5s ease-out 0.3s;
+}
+
+.social-icons a:nth-child(5) {
+    animation: fall 0.5s ease-out 0.4s;
+}
+
+.social-icons a:nth-child(6) {
+    animation: fall 0.5s ease-out 0.5s;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.social-icons.hide {
+    opacity: 0;
+    transform: translateX(100px); /* Efeito de deslizar para a direita */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Efeito de transição */
+}
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    font-family: "Arial", sans-serif;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-center {
+    flex: 1;
+    text-align: center;
+    font-size: 1em;
+}
+
+.footer-right {
+    font-size: 0.8em;
+}
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    font-family: "Arial", sans-serif;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-center {
+    text-align: center;
+    font-size: 1em;
+}
+
+.footer-right {
+    font-size: 0.7em;
+}
+.carousel {
+    width: 33%; /* Ajusta a largura do carrossel para 80% da tela */
+    max-width: 800px; /* Define um tamanho máximo para o carrossel */
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: none; /* Inicialmente escondido */
+  
+}
+.carousel.show {
+  display: block; /* Mostrar quando necessário */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Transição mais suave */
+}
+
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+.carousel img {
+    width: 100%; /* Faz com que a imagem se ajuste ao tamanho do contêiner */
+    height: auto;
+    object-fit: contain; /* Garante que a imagem mantenha as proporções sem deformar */
+    max-height: 400px; /* Define um tamanho máximo para a altura da imagem */
+    border-radius: 10px;
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.carousel-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .carousel-button {
+        padding: 5px;
+    }
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: none; /* Inicialmente escondido */
+    gap: 20px;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Efeito de transição */
+    z-index: 1000; /* Garante que os ícones e descrições estejam na frente do carrossel */
+}
+
+.social-icons.show {
+    display: flex;
+    opacity: 1;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2em;
+    transition: color 0.3s, transform 0.3s, opacity 0.3s;
+    position: relative;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons a:not(:hover) {
+    opacity: 0.2;
+}
+
+.social-icons a:hover ~ a {
+    opacity: 0.2;
+}
+
+.social-icons a:hover {
+    opacity: 1;
+}
+
+.social-icons a::after {
+    content: attr(data-title); /* Exibe o nome das redes sociais */
+    position: absolute;
+    bottom: -35px; /* Move a descrição mais abaixo */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 3px 7px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    font-size: 0.8em; /* Fonte menor */
+    font-family: 'Luckiest Guy', cursive; /* Mantém a fonte anterior */
+}
+
+.social-icons a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1); /* Animação de crescimento */
+}
+.social-icons {
+    margin-top: 20px;
+    display: none; /* Inicialmente escondido */
+    gap: 20px;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Efeito de transição */
+    z-index: 1000; /* Garante que os ícones estejam na frente do carrossel */
+}
+
+.social-icons.show {
+    display: flex;
+    opacity: 1;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2em;
+    transition: color 0.3s, transform 0.3s, opacity 0.3s;
+    position: relative;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons a:not(:hover) {
+    opacity: 0.2;
+}
+
+.social-icons a:hover ~ a {
+    opacity: 0.2;
+}
+
+.social-icons a:hover {
+    opacity: 1;
+}
+
+.social-icons a::after {
+    content: attr(data-title); /* Exibe o nome das redes sociais */
+    position: absolute;
+    bottom: -35px; /* Move a descrição mais abaixo */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 3px 7px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    font-size: 0.8em; /* Fonte menor */
+    font-family: 'Luckiest Guy', cursive; /* Mantém a fonte anterior */
+}
+
+.social-icons a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1); /* Animação de crescimento */
+}
+
+.social-icons a:nth-child(1) {
+    animation: fall 0.5s ease-out;
+}
+
+.social-icons a:nth-child(2) {
+    animation: fall 0.5s ease-out 0.1s;
+}
+
+.social-icons a:nth-child(3) {
+    animation: fall 0.5s ease-out 0.2s;
+}
+
+.social-icons a:nth-child(4) {
+    animation: fall 0.5s ease-out 0.3s;
+}
+
+.social-icons a:nth-child(5) {
+    animation: fall 0.5s ease-out 0.4s;
+}
+
+.social-icons a:nth-child(6) {
+    animation: fall 0.5s ease-out 0.5s;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.modal-mimos {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-mimos-content {
+    position: relative;
+    background-color: #9370DB; /* Tom de amarelo azulado quase roxo */
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 720px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-out, slideIn 0.5s ease-out;
+    color: white;
+}
+
+.close-mimos {
+    position: absolute;
+    top: 15px; /* Ajusta a posição do botão para baixo */
+    right: 15px; /* Ajusta a posição do botão para a esquerda */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    background: #ff4444; /* Cor de fundo mais agradável */
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-mimos:hover,
+.close-mimos:focus {
+    background-color: #ff6666;
+    transform: scale(1.1);
+}
+
+button {
+    background-color: #444; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor ao passar o mouse */
+    border-radius: 50px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transições */
+    font-size: 1.2em; /* Tamanho da fonte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    margin: 10px; /* Espaçamento entre botões */
+}
+
+button:hover {
+    background-color: #666; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.1); /* Efeito de escala ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
+}
+
+button:active {
+    background-color: #888; /* Cor de fundo ao clicar */
+    transform: scale(1); /* Efeito de escala ao clicar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra ao clicar */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(0); }
+}
+
+.mimos, .chave-pix {
+    margin-top: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Efeito de transição */
+    display: flex;
+    justify-content: center;
+}
+
+.mimos img, .chave-pix img {
+    width: 50%; /* Ajusta o tamanho da imagem */
+    max-width: 400px; /* Tamanho máximo da imagem */
+    height: auto; /* Mantém as proporções da imagem */
+    border-radius: 10px;
+}
+
+.mimos.show, .chave-pix.show {
+    opacity: 1;
+}
+
+.coming-soon {
+    display: none; /* Inicialmente escondido */
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    color: #FF4500; /* Cor para o texto */
+    padding: 20px;
+    border: 2px dashed #FF4500; /* Borda tracejada */
+    background-color: #FFF5EE; /* Cor de fundo suave */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Efeito de transição */
+}
+
+.coming-soon.show {
+    opacity: 1;
+}
+/*quem é o clipados*/
+    .trail {
+        position: absolute;
+        color: red; /* Altere a cor conforme necessário */
+        font-size: 20px; /* Altere o tamanho da fonte conforme necessário */
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity 1s ease-out; /* Transição suave */
+    }
+    .grid-container {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        background: linear-gradient(270deg, #f8f8f8, #e0e0e0);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+    }
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    .content {
+        display: none;
+        font-family: 'Arial', sans-serif; /* Fonte agradável */
+        color: #333; /* Cor do texto */
+        background-color: rgba(255, 255, 255, 0.9); /* Cor de fundo leve com transparência */
+        padding: 20px;
+        border-radius: 10px; /* Bordas arredondadas */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
+max-width: 600px; /* Define a largura máxima da grid */ width: 100%; /* Mantém a largura responsiva */      
+    }
+    .content.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .button {
+        cursor: pointer;
+        font-size: 18px;
+        padding: 10px;
+        background-color: #4CAF50;
+        border: none;
+        color: #fff;
+        margin-top: 10px;
+        border-radius: 5px; /* Bordas arredondadas */
+        transition: background-color 0.3s ease; /* Transição de cor */
+    }
+    .button:hover {
+        background-color: #45a049; /* Cor ao passar o mouse */
+    }
+.content p {
+    text-align: left;
+}
+
+/*video container*/
+
+.video-container {
+    position: relative;
+}
+
+#clipadosVideo {
+    width: 100%; /* Largura do vídeo */
+    height: auto; /* Mantém a proporção do vídeo */
+    border-radius: 10px; /* Bordas arredondadas para um visual mais elegante */
+}
+
+.notification {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+/*footer*/
+footer {
+    background-color: #111; /* Fundo escuro */
+    color: #fff; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Espaçamento interno */
+    position: fixed; /* Fixa o rodapé no fundo */
+    width: 100%; /* Largura total */
+    bottom: 0; /* Alinhamento ao fundo */
+}
+
+.footer-content p {
+    margin: 5px 0; /* Espaçamento entre parágrafos */
+}
+
+.designer {
+    font-size: 0.8em; /* Fonte menor para o crédito do designer */
+    color: #ccc; /* Cor mais clara para o crédito do designer */
+}
+
+footer {
+    background-color: #111; /* Fundo escuro */
+    color: #fff; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Espaçamento interno */
+    position: fixed; /* Fixa o rodapé no fundo */
+    width: 100%; /* Largura total */
+    bottom: 0; /* Alinhamento ao fundo */
+}
+
+.footer-content p {
+    margin: 5px 0; /* Espaçamento entre parágrafos */
+}
+
+.designer {
+    font-size: 0.8em; /* Fonte menor para o crédito do designer */
+    color: #ccc; /* Cor mais clara para o crédito do designer */
+}
+/* Estilo da Sidebar */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1002;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+/* Estilo dos Links da Sidebar */
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+/* Estilo do Botão de Fechar */
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Estilo do Conteúdo Principal */
+.main {
+    transition: margin-left 0.5s;
+    padding: 16px;
+    margin-left: 0;
+}
+
+/* Botão de Abrir a Sidebar */
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+/* Efeito de Overlay */
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+}
