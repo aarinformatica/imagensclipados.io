@@ -15,7 +15,75 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-     body {
+        .content {
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .carousel {
+            width: 100%; /* Ajusta a largura do carrossel */
+            max-width: 800px; /* Define um tamanho máximo para o carrossel */
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 1s ease-in-out; /* Transição mais suave */
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel img {
+            width: 100%; /* Faz com que a imagem se ajuste ao tamanho do contêiner */
+            height: auto;
+            object-fit: contain; /* Garante que a imagem mantenha as proporções sem deformar */
+            max-height: 400px; /* Define um tamanho máximo para a altura da imagem */
+            border-radius: 10px;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .carousel {
+                width: 90%;
+                max-width: 100%;
+            }
+
+            .carousel-button {
+                padding: 5px;
+            }
+        }
+    </style>
+  <style>
+    body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
@@ -55,7 +123,7 @@
     height: auto;
     margin-bottom: 20px;
     position: absolute; /* Posiciona o logo absolutamente dentro do header */
-    bottom: -90px; /* Ajuste a posição do logo conforme necessário */
+    bottom: -80px; /* Ajuste a posição do logo conforme necessário */
 }
 
 #main {
@@ -245,185 +313,7 @@
         padding: 5px;
     }
 }
-
-/* Estilo para o conteúdo principal */
-.content {
-  padding: 20px;
-  margin: 20px;
-  transition: margin-left .5s;
-  overflow: hidden;
-}
-
-/* Header */
-.header {
-  background-color: #333;
-  padding: 10px 0;
-  text-align: center;
-  color: white;
-}
-
-.header-logo {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Carrossel */
-.carousel {
-    width: 80%; /* Ajusta a largura do carrossel */
-    max-width: 800px; /* Define um tamanho máximo para o carrossel */
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-.carousel-inner {
-    display: flex;
-    transition: transform 1s ease-in-out; /* Transição mais suave */
-}
-
-.carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-.carousel img {
-    width: 100%; /* Faz com que a imagem se ajuste ao tamanho do contêiner */
-    height: auto;
-    object-fit: contain; /* Garante que a imagem mantenha as proporções sem deformar */
-    max-height: 400px; /* Define um tamanho máximo para a altura da imagem */
-    border-radius: 10px;
-}
-
-.carousel-buttons {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.carousel-button {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-.carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Media Queries para responsividade */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    .sidebar .closebtn {
-        position: relative;
-        top: 0;
-        right: 0;
-        font-size: 36px;
-    }
-
-    .openbtn {
-        width: 100%;
-    }
-
-    .content {
-        margin-left: 0;
-    }
-
-    .carousel {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .carousel img {
-        max-height: 300px; /* Ajusta a altura da imagem para telas menores */
-    }
-
-    .carousel-button {
-        padding: 5px;
-    }
-}
-
-        .content {
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .carousel {
-            width: 100%; /* Ajusta a largura do carrossel */
-            max-width: 800px; /* Define um tamanho máximo para o carrossel */
-            margin: auto;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-
-        .carousel-inner {
-            display: flex;
-            transition: transform 1s ease-in-out; /* Transição mais suave */
-        }
-
-        .carousel-item {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
-
-        .carousel img {
-            width: 100%; /* Faz com que a imagem se ajuste ao tamanho do contêiner */
-            height: auto;
-            object-fit: contain; /* Garante que a imagem mantenha as proporções sem deformar */
-            max-height: 400px; /* Define um tamanho máximo para a altura da imagem */
-            border-radius: 10px;
-        }
-
-        .carousel-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
-
-        .carousel-button {
-            background-color: rgba(0, 0, 0, 0.5);
-            border: none;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 50%;
-        }
-
-        .carousel-button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        @media (max-width: 768px) {
-            .carousel {
-                width: 90%;
-                max-width: 100%;
-            }
-
-            .carousel-button {
-                padding: 5px;
-            }
-        }
-    </style>
+  </style>
 </head>
 <body>
     <!-- Header com fundo e logo -->
