@@ -1,230 +1,85 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-}
-
-.header {
-    width: 100%;
-    height: 150px; /* Altura fixa do header */
-    max-height: 300px; /* Bloqueia a altura do header */
-    text-align: center;
-    background-image: url('https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/fundoclipados.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 20px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-}
-
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.header-logo {
-    max-width: 150px; /* Ajuste o tamanho máximo do logo conforme necessário */
-    height: auto;
-    margin-bottom: 20px;
-    position: absolute; /* Posiciona o logo absolutamente dentro do header */
-    bottom: -80px; /* Ajuste a posição do logo conforme necessário */
-}
-
-#main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: margin-left .5s;
-    padding: 16px;
-    height: 100vh; /* Ocupa a altura total da tela */
-    position: relative; /* Garante que o botão de abrir a sidebar seja posicionado corretamente */
-}
-
-.openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #343a40;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    position: absolute; /* Torna o botão de abrir a sidebar posicionado relativamente ao container #main */
-    top: 20px; /* Ajusta a posição do botão a partir do topo */
-    left: 20px; /* Ajusta a posição do botão a partir da esquerda */
-    display: block; /* Certifica-se de que o botão seja exibido */
-}
-
-.openbtn:hover {
-    background-color: #495057;
-}
-/* Estilo para o botão de fechar */
-.close-btn {
-  background-color: #ff0000; /* Cor inicial do botão */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* Efeito de transição */
-}
-
-.close-btn:hover {
-  background-color: #ff8080; /* Cor do botão ao passar o mouse */
-}
-/* Estilos da sidebar */
-
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgba(52, 58, 64, 0.9); /* Cor de fundo com transparência */
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    border-radius: 0 15px 15px 0; /*Bordas arredondadas nas laterais direita e esquerda */
-  border-bottom-right-radius: 15px; /* Borda arredondada no canto inferior direito */
-}
-
-.sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 15px;
-    color: #adb5bd; /* Cor do texto elegante */
-    display: flex;
-    align-items: center;
-    transition: color 0.3s, background-color 0.3s, font-weight 0.3s; /* Transição suave */
-}
-
-.sidebar a i {
-    margin-right: 10px; /* Espaço entre ícone e texto */
-    transition: color 0.3s; /* Transição suave */
-}
-
-.sidebar a:hover {
-    color: #1E90FF	; /* Cor do texto ao passar o mouse */
-    font-weight: bold; /* Fonte em negrito ao passar o mouse */
-    background-color: #8A2BE2; /* Cor de fundo ao passar o mouse */
-}
-
-.sidebar a:hover i {
-    color: yellow; /* Cor do ícone ao passar o mouse */
-    animation: vibrate 0.2s linear infinite; /* Efeito de vibração */
-}
-
-.sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-.sidebar .closebtn:hover{
-  color: white;
-  background-color:red;
-}
-/* Estilos do submenu */
-.submenu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.submenu li {
-    padding-left: 30px;
-}
-
-.submenu a {
-    font-size: 15px;
-}
-
-/* Animação de vibração */
-@keyframes vibrate {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-2px); }
-    50% { transform: translateX(2px); }
-    75% { transform: translateX(-2px); }
-    100% { transform: translateX(0); }
-}
-/*carrossel*/
-.carousel {
-    width: 33%; /* Ajusta a largura do carrossel para 33% da tela */
-    max-width: 800px; /* Define um tamanho máximo para o carrossel */
-    margin: 70px auto 0 auto; /* Adiciona margem superior para afastar do logo */
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    display: block; /* Mostrar inicialmente */
-}
-
-.carousel.show {
-    display: block; /* Mostrar quando necessário */
-}
-
-.carousel-inner {
-    display: flex;
-    transition: transform 1s ease-in-out; /* Transição mais suave */
-}
-
-.carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-.carousel img {
-    width: 100%; /* Faz com que a imagem se ajuste ao tamanho do contêiner */
-    height: auto;
-    object-fit: contain; /* Garante que a imagem mantenha as proporções sem deformar */
-    max-height: 400px; /* Define um tamanho máximo para a altura da imagem */
-    border-radius: 10px;
-}
-
-.carousel-buttons {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.carousel-button {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-.carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-@media (max-width: 768px) {
-    .carousel {
-        width: 90%;
-        max-width: 100%;
-    }
-
-    .carousel-button {
-        padding: 5px;
+// Funções da sidebar
+function openNav() {
+    const sidebar = document.getElementById("mySidebar");
+    const main = document.getElementById("main");
+    if (sidebar && main) {
+        sidebar.style.width = "250px";
+        main.style.marginLeft = "250px";
     }
 }
+
+function closeNav() {
+    const sidebar = document.getElementById("mySidebar");
+    const main = document.getElementById("main");
+    if (sidebar && main) {
+        sidebar.style.width = "0";
+        main.style.marginLeft = "0";
+    }
+}
+
+function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("initialVideo");
+    const openBtn = document.querySelector('.openbtn');
+    const closeBtn = document.querySelector('.closebtn');
+
+    // Verifica se o modal e o vídeo existem antes de tentar acessá-los
+    if (modal) {
+        modal.style.display = "block";
+    }
+
+    if (video) {
+        video.play();
+    }
+
+    if (openBtn) {
+        openBtn.style.display = 'block';
+        openBtn.addEventListener('click', openNav);
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeNav);
+    }
+
+    // Carrossel
+    let slideIndex = 0;
+    let autoSlideInterval;
+
+    // Função para mostrar os slides automaticamente
+    function showSlides() {
+        const slides = document.querySelectorAll('.carousel-item');
+        slides.forEach((slide, index) => {
+            slide.style.display = 'none';
+        });
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex - 1].style.display = 'block';
+        autoSlideInterval = setTimeout(showSlides, 3000); // Muda a cada 3 segundos
+    }
+
+    // Função para mover os slides manualmente
+    function moveSlide(direction) {
+        clearTimeout(autoSlideInterval); // Para a mudança automática quando movido manualmente
+        const slides = document.querySelectorAll('.carousel-item');
+        slideIndex += direction;
+
+        if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+        } else if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        }
+
+        slides.forEach((slide, index) => {
+            slide.style.display = 'none';
+        });
+        slides[slideIndex].style.display = 'block';
+        autoSlideInterval = setTimeout(showSlides, 3000); // Reinicia a mudança automática
+    }
+
+    showSlides(); // Inicia a apresentação de slides automaticamente
+});
