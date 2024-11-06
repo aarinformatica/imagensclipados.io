@@ -17,6 +17,11 @@ function closeNav() {
     }
 }
 
+function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
+}
+
 document.addEventListener('DOMContentLoaded', (event) => {
     const modal = document.getElementById("videoModal");
     const video = document.getElementById("initialVideo");
@@ -45,6 +50,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let slideIndex = 0;
     let autoSlideInterval;
 
+    // Função para mostrar os slides automaticamente
     function showSlides() {
         const slides = document.querySelectorAll('.carousel-item');
         slides.forEach((slide, index) => {
@@ -52,34 +58,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
         slideIndex++;
         if (slideIndex > slides.length) { slideIndex = 1; }
-        slides[slideIndex - 1].style.display = 'block'; // Exibe o slide atual
+        slides[slideIndex - 1].style.display = 'block';
         autoSlideInterval = setTimeout(showSlides, 3000); // Muda a cada 3 segundos
     }
 
-    // Inicializa a apresentação de slides automaticamente
-    showSlides();
-
-    // Função para mover os slides manualmente, se necessário
+    // Função para mover os slides manualmente
     function moveSlide(direction) {
         clearTimeout(autoSlideInterval); // Para a mudança automática quando movido manualmente
         const slides = document.querySelectorAll('.carousel-item');
         slideIndex += direction;
 
-        if (slideIndex < 1) {
-            slideIndex = slides.length;
-        } else if (slideIndex > slides.length) {
-            slideIndex = 1;
+        if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+        } else if (slideIndex >= slides.length) {
+            slideIndex = 0;
         }
 
         slides.forEach((slide, index) => {
             slide.style.display = 'none';
         });
-        slides[slideIndex - 1].style.display = 'block';
+        slides[slideIndex].style.display = 'block';
         autoSlideInterval = setTimeout(showSlides, 3000); // Reinicia a mudança automática
     }
 
-    // Atribui funções de movimento aos botões do carrossel
-    document.querySelector('.carousel-button-prev').addEventListener('click', () => moveSlide(-1));
-    document.querySelector('.carousel-button-next').addEventListener('click', () => moveSlide(1));
+    showSlides(); // Inicia a apresentação de slides automaticamente
 });
-/*comportamento sidebar*/
