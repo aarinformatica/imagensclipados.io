@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="pt-br" >
 <head>
   <meta charset="UTF-8">
   <title>Clipados Lives</title>
@@ -13,11 +13,75 @@
     <meta charset="UTF-8">
     <title>Clipados Lives</title>
     <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        body {
+        .content {
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .carousel {
+            width: 100%; /* Ajusta a largura do carrossel */
+            max-width: 800px; /* Define um tamanho máximo para o carrossel */
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 1s ease-in-out; /* Transição mais suave */
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel img {
+            width: 100%; /* Faz com que a imagem se ajuste ao tamanho do contêiner */
+            height: auto;
+            object-fit: contain; /* Garante que a imagem mantenha as proporções sem deformar */
+            max-height: 400px; /* Define um tamanho máximo para a altura da imagem */
+            border-radius: 10px;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .carousel {
+                width: 90%;
+                max-width: 100%;
+            }
+
+            .carousel-button {
+                padding: 5px;
+            }
+        }
+      body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
@@ -248,6 +312,8 @@
     }
 }
     </style>
+</head>
+<body>
     <!-- Header com fundo e logo -->
     <header class="header">
         <div class="header-content">
@@ -258,207 +324,136 @@
     <!-- Sidebar -->
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#inicio"><i class="fas fa-home"></i> Início</a>
-        <a href="#enviar-mimos"><i class="fas fa-gift"></i> Enviar Mimos</a>
-        <a href="#loudouts-warzone"><i class="fas fa-crosshairs"></i> Loadouts Warzone</a>
-        <a href="#redes-sociais"><i class="fas fa-hashtag"></i> Redes Sociais</a>
-        <a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('inicio')"><i class="fas fa-home"></i> Início</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('enviar-mimos')"><i class="fas fa-gift"></i> Enviar Mimos</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('loadouts-warzone')"><i class="fas fa-crosshairs"></i> Loadouts Warzone</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('redes-sociais')"><i class="fas fa-hashtag"></i> Redes Sociais</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('sobre')"><i class="fas fa-info-circle"></i> Sobre</a>
         <ul class="submenu">
-            <li><a href="#quem-e-o-clipados"><i class="fas fa-user"></i> Quem é o Clipados?</a></li>
-            <li><a href="#parcerias"><i class="fas fa-handshake"></i> Parcerias</a></li>
-            <li><a href="#setup"><i class="fas fa-desktop"></i> Setup</a></li>
+            <li><a href="javascript:void(0)" onclick="scrollToSection('quem-e-o-clipados')"><i class="fas fa-user"></i> Quem é o Clipados?</a></li>
+            <li><a href="javascript:void(0)" onclick="scrollToSection('parcerias')"><i class="fas fa-handshake"></i> Parcerias</a></li>
+            <li><a href="javascript:void(0)" onclick="scrollToSection('setup')"><i class="fas fa-desktop"></i> Setup</a></li>
         </ul>
     </div>
+    
     <!-- Conteúdo principal -->
     <div id="main">
         <!-- Botão de abrir a sidebar -->
         <button class="openbtn" onclick="openNav()">&#9776; Menu</button>
 
-        <!-- Carrossel -->
-       <div class="carousel" id="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item"><img src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/logoclipados.jpg" alt="Clipados Lives Clipados"></div>
-        <div class="carousel-item"><img src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/programacaoclipados.jpg" alt="Programação"></div>
-        <div class="carousel-item"><img src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/programacaoclipadoscorrigido.jpg" alt="Vídeos Novos"></div>
-        <div class="carousel-item"><img src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/deixeohomemtrabalhar.jpg" alt="Deixe o Homem Trabalhar"></div>
-    </div>
-    <div class="carousel-buttons">
-        <button class="carousel-button carousel-button-prev">&#9664;</button>
-        <button class="carousel-button carousel-button-next">&#9654;</button>
-    </div>
+        <!-- Seções de conteúdo -->
+        <div id="inicio" class="content">
+            <h1></h1>
+            <p></p>
+            <!-- Carrossel -->
+            <div class="carousel" id="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item"><img src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/logoclipados.jpg" alt="Clipados Lives Clipados"></div>
+                    <div class="carousel-item"><img src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/programacaoclipados.jpg" alt="Programação"></div>
+                    <div class="carousel-item"><img src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/programacaoclipadoscorrigido.jpg" alt="Vídeos Novos"></div>
+                    <div class="carousel-item"><img src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/deixeohomemtrabalhar.jpg" alt="Deixe o Homem Trabalhar"></div>
+                </div>
+                <div class="carousel-buttons">
+                    <button class="carousel-button carousel-button-prev">&#9664;</button>
+                    <button class="carousel-button carousel-button-next">&#9654;</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="enviar-mimos" class="content">
+            <h1>Enviar Mimos</h1>
+            <p>Envie seus mimos!</p>
+        </div>
+        <div id="loadouts-warzone" class="content">
+            <h1>Loadouts Warzone</h1>
+            <p>Veja os melhores loadouts para Warzone.</p>
+        </div>
+        <div id="redes-sociais" class="content">
+            <h1>Redes Sociais</h1>
+            <p>Siga-nos nas redes sociais.</p>
+        </div>
+        <div id="sobre" class="content">
+            <h1>Sobre</h1>
+            <p>Saiba mais sobre nós.</p>
+        </div>
+        <div id="quem-e-o-clipados" class="content">
+            <h1>Quem é o Clipados?</h1>
+            <p>Conheça o Clipados.</p>
+        </div>
+        <div id="parcerias" class="content">
+            <h1>Parcerias</h1>
+            <p>Veja nossas parcerias.</p>
+        </div>
+<div id="setup" class="content">
+    <h1>Setup</h1>
+    <p>Conheça nosso setup.</p>
+</div>
 </div>
 
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const modal = document.getElementById("videoModal");
+        const video = document.getElementById("initialVideo");
+        const openBtn = document.querySelector('.openbtn');
+        const closeBtn = document.querySelector('.closebtn');
 
-    <!-- JavaScript -->
-    <script>
-        // Funções da sidebar
-        function openNav() {
-            const sidebar = document.getElementById("mySidebar");
-            const main = document.getElementById("main");
-            if (sidebar && main) {
-                sidebar.style.width = "250px";
-                main.style.marginLeft = "250px";
-            }
+        // Verifica se o modal e o vídeo existem antes de tentar acessá-los
+        if (modal) {
+            modal.style.display = "block";
         }
 
-        function closeNav() {
-            const sidebar = document.getElementById("mySidebar");
-            const main = document.getElementById("main");
-            if (sidebar && main) {
-                sidebar.style.width = "0";
-                main.style.marginLeft = "0";
-            }
+        if (video) {
+            video.play();
         }
 
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const modal = document.getElementById("videoModal");
-            const video = document.getElementById("initialVideo");
-            const openBtn = document.querySelector('.openbtn');
-            const closeBtn = document.querySelector('.closebtn');
-
-            // Verifica se o modal e o vídeo existem antes de tentar acessá-los
-            if (modal) {
-                modal.style.display = "block";
-            }
-
-            if (video) {
-                video.play();
-            }
-
-            if (openBtn) {
-                openBtn.style.display = 'block';
-                openBtn.addEventListener('click', openNav);
-            }
-
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeNav);
-            }
-
-            // Carrossel
-            let slideIndex = 0;
-            let autoSlideInterval;
-
-            // Função para mostrar os slides automaticamente
-            function showSlides() {
-                const slides = document.querySelectorAll('.carousel-item');
-                slides.forEach((slide, index) => {
-                    slide.style.display = 'none';
-                });
-                slideIndex++;
-                if (slideIndex > slides.length) { slideIndex = 1; }
-                slides[slideIndex - 1].style.display = 'block';
-                autoSlideInterval = setTimeout(showSlides, 3000); // Muda a cada 3 segundos
-            }
-
-            // Função para mover os slides manualmente
-            function moveSlide(direction) {
-                clearTimeout(autoSlideInterval); // Para a mudança automática quando movido manualmente
-                const slides = document.querySelectorAll('.carousel-item');
-                slideIndex += direction;
-
-                if (slideIndex < 0) {
-                    slideIndex = slides.length - 1;
-                } else if (slideIndex >= slides.length) {
-                    slideIndex = 0;
-                }
-
-                slides.forEach((slide, index) => {
-                    slide.style.display = 'none';
-                });
-                slides[slideIndex].style.display = 'block';
-                autoSlideInterval = setTimeout(showSlides, 3000); // Reinicia a mudança automática
-            }
-
-            showSlides(); // Inicia a apresentação de slides automaticamente
-        });
-    </script>
-        <script>
-            // Funções da sidebar
-function openNav() {
-    const sidebar = document.getElementById("mySidebar");
-    const main = document.getElementById("main");
-    if (sidebar && main) {
-        sidebar.style.width = "250px";
-        main.style.marginLeft = "250px";
-    }
-}
-
-function closeNav() {
-    const sidebar = document.getElementById("mySidebar");
-    const main = document.getElementById("main");
-    if (sidebar && main) {
-        sidebar.style.width = "0";
-        main.style.marginLeft = "0";
-    }
-}
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    const modal = document.getElementById("videoModal");
-    const video = document.getElementById("initialVideo");
-    const openBtn = document.querySelector('.openbtn');
-    const closeBtn = document.querySelector('.closebtn');
-
-    // Verifica se o modal e o vídeo existem antes de tentar acessá-los
-    if (modal) {
-        modal.style.display = "block";
-    }
-
-    if (video) {
-        video.play();
-    }
-
-    if (openBtn) {
-        openBtn.style.display = 'block';
-        openBtn.addEventListener('click', openNav);
-    }
-
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeNav);
-    }
-
-    // Carrossel
-    let slideIndex = 0;
-    let autoSlideInterval;
-
-    function showSlides() {
-        const slides = document.querySelectorAll('.carousel-item');
-        slides.forEach((slide, index) => {
-            slide.style.display = 'none';
-        });
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1; }
-        slides[slideIndex - 1].style.display = 'block'; // Exibe o slide atual
-        autoSlideInterval = setTimeout(showSlides, 3000); // Muda a cada 3 segundos
-    }
-
-    // Inicializa a apresentação de slides automaticamente
-    showSlides();
-
-    // Função para mover os slides manualmente, se necessário
-    function moveSlide(direction) {
-        clearTimeout(autoSlideInterval); // Para a mudança automática quando movido manualmente
-        const slides = document.querySelectorAll('.carousel-item');
-        slideIndex += direction;
-
-        if (slideIndex < 1) {
-            slideIndex = slides.length;
-        } else if (slideIndex > slides.length) {
-            slideIndex = 1;
+        if (openBtn) {
+            openBtn.style.display = 'block';
+            openBtn.addEventListener('click', openNav);
         }
 
-        slides.forEach((slide, index) => {
-            slide.style.display = 'none';
-        });
-        slides[slideIndex - 1].style.display = 'block';
-        autoSlideInterval = setTimeout(showSlides, 3000); // Reinicia a mudança automática
-    }
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeNav);
+        }
 
-    // Atribui funções de movimento aos botões do carrossel
-    document.querySelector('.carousel-button-prev').addEventListener('click', () => moveSlide(-1));
-    document.querySelector('.carousel-button-next').addEventListener('click', () => moveSlide(1));
-});
-/*comportamento sidebar*/
-        </script>
+        // Carrossel
+        let slideIndex = 0;
+        let autoSlideInterval;
+
+        // Função para mostrar os slides automaticamente
+        function showSlides() {
+            const slides = document.querySelectorAll('.carousel-item');
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+            });
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = 'block';
+            autoSlideInterval = setTimeout(showSlides, 3000); // Muda a cada 3 segundos
+        }
+
+        // Função para mover os slides manualmente
+        function moveSlide(direction) {
+            clearTimeout(autoSlideInterval); // Para a mudança automática quando movido manualmente
+            const slides = document.querySelectorAll('.carousel-item');
+            slideIndex += direction;
+
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            } else if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+            });
+            slides[slideIndex].style.display = 'block';
+            autoSlideInterval = setTimeout(showSlides, 3000); // Reinicia a mudança automática
+        }
+
+        showSlides(); // Inicia a apresentação de slides automaticamente
+    });
+</script>
 </body>
 </html>
 <!-- partial -->
