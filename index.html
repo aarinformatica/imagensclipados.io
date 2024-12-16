@@ -17,7 +17,161 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <style>
+     <header>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/logopng.png" alt="Warzone Gamers Logo">
+        </div>
+        <div class="menu-center">
+            <button class="menu-button" onclick="scrollToSection('#home')"><i class="fas fa-home"></i><span>Início</span></button>
+            <button class="menu-button" onclick="scrollToSection('#send-gifts')"><i class="fas fa-gift"></i><span>Enviar Mimos</span></button>
+            <button class="menu-button" onclick="scrollToSection('#loadouts')"><i class="fas fa-crosshairs"></i><span>Loadouts Warzone</span></button>
+            <button class="menu-button" onclick="scrollToSection('#social')"><i class="fas fa-hashtag"></i><span>Redes Sociais</span></button>
+            <button class="menu-button" onclick="scrollToSection('#about')"><i class="fas fa-info-circle"></i><span>Sobre</span></button>
+            <button class="menu-button" onclick="scrollToSection('#about-clipados')"><i class="fas fa-user"></i><span>Quem é o Clipados</span></button>
+            <button class="menu-button" onclick="scrollToSection('#partners')"><i class="fas fa-handshake"></i><span>Parcerias</span></button>
+            <button class="menu-button" onclick="scrollToSection('#setup')"><i class="fas fa-cog"></i><span>Setup</span></button>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="content">
+            <p>
+        <span class="random-fall-text">B</span>
+        <span class="random-fall-text">e</span>
+        <span class="random-fall-text">m</span>
+        <span class="random-fall-text"> </span>
+        <span class="random-fall-text">v</span>
+        <span class="random-fall-text">i</span>
+        <span class="random-fall-text">n</span>
+        <span class="random-fall-text">d</span>
+        <span class="random-fall-text">o</span>
+        <span class="random-fall-text">!</span>
+    </p>
+            <p>🎮DE SEGUNDA A SEXTA A PARTIR DAS ⏩ 20:00 HORAS!! UM CANAL FOCADO EM WARZONE E MUITA RESENHA. AQUI TEM CURA DA ANSIEDADE, DEPRESSÃO E TODO SENTIMENTO RUIM VAI EMBORA!!!😎</p>
+<div class="container">
+        <div class="video-container">
+            <video id="video" width="400" controls autoplay>
+                <source src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/trailerdocanaldeclipadoslives.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>          
+        </div>
+    </section>
+
+    <section id="send-gifts">
+        <div class="content">
+            <h2>Enviar Mimos</h2>
+            <p>Dê aquela ajudinha para seu streamer favorito!</p>
+        </div>
+      <div class="envio-mimos-container">
+        <h1 class="envio-mimos-title" id="envioMimosMainTitle">Escolha uma Opção</h1>
+        <div class="envio-mimos-options">
+            <button id="envioMimosShowQrCodeBtn" class="envio-mimos-button">Ver QR Code</button>
+            <button id="envioMimosShowPixKeyBtn" class="envio-mimos-button">Mostrar Chave PIX</button>
+        </div>
+        <div id="envioMimosContentQrCode" class="envio-mimos-content"></div>
+        <div id="envioMimosContentPix" class="envio-mimos-content"></div>
+        <button id="envioMimosBackBtn" class="envio-mimos-button envio-mimos-hidden">Voltar</button>
+    </div>
+    </section>
+
+    <section id="loadouts" >
+        <div class="content">
+            <h2>Loadouts Warzone</h2>
+            <p>Confira os melhores loadouts para dominar no Warzone.</p>
+        </div>
+       <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <!-- Mensagens de chat serão inseridas aqui via JavaScript -->
+        </div>
+        <input type="text" id="user-input" placeholder="Digite sua mensagem..." />
+        <button id="send-btn">Enviar</button>
+    </div>
+    </section>
+
+    <section id="social" align-"center">
+        <div class="content">
+            <h2>Redes Sociais</h2>
+            <p>Conecte-se conosco nas redes sociais.</p>
+        
+        <div class="social-container">
+            <div class="social-button-group">
+                <a href="https://discord.gg/cfYERxdjzC" target="_blank" class="social-button" id="discord">
+                    <i class="fab fa-discord"></i>
+                    <p class="social-name">Familia Clipados</p>
+                </a>
+                <a href="https://www.instagram.com/clipados_livesoficial/" target="_blank" class="social-button" id="instagram">
+                    <i class="fab fa-instagram"></i>
+                    <p class="social-name">clipados_livesoficial</p>
+                </a>
+                <a href="https://livepix.gg/clipados" target="_blank" class="social-button" id="livepix">
+                    <i class="fas fa-donate"></i>
+                    <p class="social-name">LivePix Clipados</p>
+                </a>
+            </div>
+            <div class="social-button-group">
+                <a href="https://tiktok.com/@clipados_lives" target="_blank" class="social-button" id="tiktok">
+                    <i class="fab fa-tiktok"></i>
+                    <p class="social-name">@clipados_lives</p>
+                </a>
+                <a href="https://www.twitch.tv/clipados_lives" target="_blank" class="social-button" id="twitch">
+                    <i class="fab fa-twitch"></i>
+                    <p class="social-name">clipados_lives</p>
+                </a>
+                <a href="https://youtube.com/@CLIPADOSLIVES" target="_blank" class="social-button" id="youtube">
+                    <i class="fab fa-youtube"></i>
+                    <p class="social-name">@clipadoslives</p>
+                </a>
+            </div>
+        </div>
+    </div>
+  </section>
+
+    <section id="about">
+        <div class="content">
+            <h2>Sobre</h2>
+            <p>Warzone é um jogo de battle royale free-to-play desenvolvido pela Infinity Ward e Raven Software e publicado pela Activision.</p>
+        </div>
+    </section>
+
+    <section id="about-clipados">
+        <div class="content">
+            <h2>Quem é o Clipados</h2>
+            <p>Conheça mais sobre o Clipados e sua história no mundo dos games.</p>
+           <div class="clipados-container">
+            <div class="clipados-card">
+                <img src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/quemeoclipados.jpg" alt="Quem é o Clipados">
+                <div class="clipados-card-content">
+                    <p>🔥 MEU NOME LUCAS ZANOTTI, ATUALMENTE TENHO 26 ANOS, SOU CONHECIDO NA INTERNET COMO CLIPADOS LIVE.</p>
+                    <p>🔥 SOU CRIADOR DE CONTEÚDO AUDIOVISUAL: A 3 ANOS</p>
+                    <p>🔥 ATUALMENTE TENHO 2 CANAIS DE CONTEÚDO DIÁRIOS NAS PLATAFORMAS:</p>
+                    <p>✨ YOUTUBE e TWITCH ✨</p>
+                    <p>✨OBJETIVO DE TRAZER ALEGRIA E MELHORAR O DIA DE TODOS COM BOM HUMOR, PIADAS E ZUERA.</p>
+                </div>
+            </div>
+        </div>
+    
+    <script src="renamed_card_script.js"></script>
+        </div>
+     </section>
+
+    <section id="partners">
+        <div class="content">
+            <h2>Parcerias</h2>
+            <p>Veja nossas parcerias e colaborações.</p>
+        </div>
+    </section>
+
+    <section id="setup">
+        <div class="content">
+            <h2>Setup</h2>
+            <p>Confira o setup usado pelo Clipados para seus streams e jogos.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Warzone Gamers. All rights reserved.</p>
+    </footer>
+<style>
     body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -620,161 +774,6 @@ input[type="text"] {
     initial-value: 0.1;
 }
   </style>
-    <header>
-        <div class="logo">
-            <img src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/logopng.png" alt="Warzone Gamers Logo">
-        </div>
-        <div class="menu-center">
-            <button class="menu-button" onclick="scrollToSection('#home')"><i class="fas fa-home"></i><span>Início</span></button>
-            <button class="menu-button" onclick="scrollToSection('#send-gifts')"><i class="fas fa-gift"></i><span>Enviar Mimos</span></button>
-            <button class="menu-button" onclick="scrollToSection('#loadouts')"><i class="fas fa-crosshairs"></i><span>Loadouts Warzone</span></button>
-            <button class="menu-button" onclick="scrollToSection('#social')"><i class="fas fa-hashtag"></i><span>Redes Sociais</span></button>
-            <button class="menu-button" onclick="scrollToSection('#about')"><i class="fas fa-info-circle"></i><span>Sobre</span></button>
-            <button class="menu-button" onclick="scrollToSection('#about-clipados')"><i class="fas fa-user"></i><span>Quem é o Clipados</span></button>
-            <button class="menu-button" onclick="scrollToSection('#partners')"><i class="fas fa-handshake"></i><span>Parcerias</span></button>
-            <button class="menu-button" onclick="scrollToSection('#setup')"><i class="fas fa-cog"></i><span>Setup</span></button>
-        </div>
-    </header>
-
-    <section id="home">
-        <div class="content">
-            <p>
-        <span class="random-fall-text">B</span>
-        <span class="random-fall-text">e</span>
-        <span class="random-fall-text">m</span>
-        <span class="random-fall-text"> </span>
-        <span class="random-fall-text">v</span>
-        <span class="random-fall-text">i</span>
-        <span class="random-fall-text">n</span>
-        <span class="random-fall-text">d</span>
-        <span class="random-fall-text">o</span>
-        <span class="random-fall-text">!</span>
-    </p>
-            <p>🎮DE SEGUNDA A SEXTA A PARTIR DAS ⏩ 20:00 HORAS!! UM CANAL FOCADO EM WARZONE E MUITA RESENHA. AQUI TEM CURA DA ANSIEDADE, DEPRESSÃO E TODO SENTIMENTO RUIM VAI EMBORA!!!😎</p>
-<div class="container">
-        <div class="video-container">
-            <video id="video" width="400" controls autoplay>
-                <source src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/trailerdocanaldeclipadoslives.mp4" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>          
-        </div>
-    </section>
-
-    <section id="send-gifts">
-        <div class="content">
-            <h2>Enviar Mimos</h2>
-            <p>Dê aquela ajudinha para seu streamer favorito!</p>
-        </div>
-      <div class="envio-mimos-container">
-        <h1 class="envio-mimos-title" id="envioMimosMainTitle">Escolha uma Opção</h1>
-        <div class="envio-mimos-options">
-            <button id="envioMimosShowQrCodeBtn" class="envio-mimos-button">Ver QR Code</button>
-            <button id="envioMimosShowPixKeyBtn" class="envio-mimos-button">Mostrar Chave PIX</button>
-        </div>
-        <div id="envioMimosContentQrCode" class="envio-mimos-content"></div>
-        <div id="envioMimosContentPix" class="envio-mimos-content"></div>
-        <button id="envioMimosBackBtn" class="envio-mimos-button envio-mimos-hidden">Voltar</button>
-    </div>
-    </section>
-
-    <section id="loadouts" >
-        <div class="content">
-            <h2>Loadouts Warzone</h2>
-            <p>Confira os melhores loadouts para dominar no Warzone.</p>
-        </div>
-       <div class="chat-container">
-        <div class="chat-box" id="chat-box">
-            <!-- Mensagens de chat serão inseridas aqui via JavaScript -->
-        </div>
-        <input type="text" id="user-input" placeholder="Digite sua mensagem..." />
-        <button id="send-btn">Enviar</button>
-    </div>
-    </section>
-
-    <section id="social" align-"center">
-        <div class="content">
-            <h2>Redes Sociais</h2>
-            <p>Conecte-se conosco nas redes sociais.</p>
-        
-        <div class="social-container">
-            <div class="social-button-group">
-                <a href="https://discord.gg/cfYERxdjzC" target="_blank" class="social-button" id="discord">
-                    <i class="fab fa-discord"></i>
-                    <p class="social-name">Familia Clipados</p>
-                </a>
-                <a href="https://www.instagram.com/clipados_livesoficial/" target="_blank" class="social-button" id="instagram">
-                    <i class="fab fa-instagram"></i>
-                    <p class="social-name">clipados_livesoficial</p>
-                </a>
-                <a href="https://livepix.gg/clipados" target="_blank" class="social-button" id="livepix">
-                    <i class="fas fa-donate"></i>
-                    <p class="social-name">LivePix Clipados</p>
-                </a>
-            </div>
-            <div class="social-button-group">
-                <a href="https://tiktok.com/@clipados_lives" target="_blank" class="social-button" id="tiktok">
-                    <i class="fab fa-tiktok"></i>
-                    <p class="social-name">@clipados_lives</p>
-                </a>
-                <a href="https://www.twitch.tv/clipados_lives" target="_blank" class="social-button" id="twitch">
-                    <i class="fab fa-twitch"></i>
-                    <p class="social-name">clipados_lives</p>
-                </a>
-                <a href="https://youtube.com/@CLIPADOSLIVES" target="_blank" class="social-button" id="youtube">
-                    <i class="fab fa-youtube"></i>
-                    <p class="social-name">@clipadoslives</p>
-                </a>
-            </div>
-        </div>
-    </div>
-  </section>
-
-    <section id="about">
-        <div class="content">
-            <h2>Sobre</h2>
-            <p>Warzone é um jogo de battle royale free-to-play desenvolvido pela Infinity Ward e Raven Software e publicado pela Activision.</p>
-        </div>
-    </section>
-
-    <section id="about-clipados">
-        <div class="content">
-            <h2>Quem é o Clipados</h2>
-            <p>Conheça mais sobre o Clipados e sua história no mundo dos games.</p>
-           <div class="clipados-container">
-            <div class="clipados-card">
-                <img src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/quemeoclipados.jpg" alt="Quem é o Clipados">
-                <div class="clipados-card-content">
-                    <p>🔥 MEU NOME LUCAS ZANOTTI, ATUALMENTE TENHO 26 ANOS, SOU CONHECIDO NA INTERNET COMO CLIPADOS LIVE.</p>
-                    <p>🔥 SOU CRIADOR DE CONTEÚDO AUDIOVISUAL: A 3 ANOS</p>
-                    <p>🔥 ATUALMENTE TENHO 2 CANAIS DE CONTEÚDO DIÁRIOS NAS PLATAFORMAS:</p>
-                    <p>✨ YOUTUBE e TWITCH ✨</p>
-                    <p>✨OBJETIVO DE TRAZER ALEGRIA E MELHORAR O DIA DE TODOS COM BOM HUMOR, PIADAS E ZUERA.</p>
-                </div>
-            </div>
-        </div>
-    
-    <script src="renamed_card_script.js"></script>
-        </div>
-     </section>
-
-    <section id="partners">
-        <div class="content">
-            <h2>Parcerias</h2>
-            <p>Veja nossas parcerias e colaborações.</p>
-        </div>
-    </section>
-
-    <section id="setup">
-        <div class="content">
-            <h2>Setup</h2>
-            <p>Confira o setup usado pelo Clipados para seus streams e jogos.</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Warzone Gamers. All rights reserved.</p>
-    </footer>
-
     <script src="scripts.js"></script>
   <script>
     function scrollToSection(sectionId) {
