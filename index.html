@@ -751,6 +751,134 @@ input[type="text"] {
         <div class="content">
             <h2>Parcerias</h2>
             <p>Veja nossas parcerias e colaborações.</p>
+            <style>
+                .flip-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 10px rgba(0, 128, 128, 0.5), 0 0 20px rgba(0, 128, 128, 0.5); /* Efeito de Neon mais discreto */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    box-shadow: 0 0 20px rgba(0, 128, 128, 0.7), 0 0 30px rgba(0, 128, 128, 0.7); /* Aumentar o efeito de Neon ao passar o mouse */
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden;
+}
+
+.flip-card-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8A2BE2;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: auto; /* Ajuste automático para manter a proporção */
+    max-height: 100%; /* Máxima altura permitida */
+    object-fit: contain; /* Ajuste da imagem ao conteúdo */
+    border-radius: 10px;
+}
+
+/* Estilo para Dipshop */
+.flip-card-dipshop .flip-card-back {
+    background-color: #F0F8FF;
+    color: #1c1c1c;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-size: contain;
+    border: 2px solid #e2d1c3;
+}
+
+.flip-card-dipshop .flip-card-back p {
+    margin: 10px 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+}
+
+/* Estilo para Molix */
+.flip-card-molix .flip-card-back {
+    background-color: #F0FFFF;
+    color: black;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-size: contain;
+    border: 2px solid #fda085;
+}
+
+.flip-card-molix .flip-card-back p {
+    margin: 10px 0;
+    font-family: 'Caveat', cursive;
+    font-size: 1.2em;
+}
+            </style>
+            <div class="flip-card-container">
+    <!-- Primeiro flip card (Dipshop) -->
+    <div class="flip-card flip-card-dipshop">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://panels.twitch.tv/panel-795666120-image-0dfd3ddb-4d23-4c66-a1d4-d665b11fa17a" alt="Dipshop">
+            </div>
+            <div class="flip-card-back">
+                <p>🔥 CLIPADOS PARCEIRO OFICIAL DA DIPSHOP:</p>
+                <p>✨ EMPRESA QUE VEM ILUMINANDO A CASAS DE VARIOS STREAMERS E FAMILIAS</p>
+                <p>✨ SEU SETUP GAMER NAO PODE FICAR COMPLETO SEM UMA LUMINARIA PERSONALIZADA E EXCLUSIVA SUA !!!</p>
+                <p>🔥 USE CUPOM 🔥</p>
+                <p>✨CLIPADOS20✨</p>
+                <p>🔥 20% DESCONTO EM QUALQUER LUMINARIA GAMER</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Segundo flip card (Molix) -->
+    <div class="flip-card flip-card-molix">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://panels.twitch.tv/panel-795666120-image-94d33657-12fc-4c8e-8c2d-2ea947f93c6f" alt="Molix">
+            </div>
+            <div class="flip-card-back">
+                <p>🔥CLIPADOS PARCEIRO OFICIAL DA MOLIX:</p>
+                <p>✨ EMPRESA QUE FEZ CLIPADOS MUDAR DE ESTILO CRIANDO NOVA LOGO, INTRO E MUITO MAIS</p>
+                <p>🔥 PRECISA DE UM BOM MARKETING E UMA DIVULGAÇÃO TOPZERA COM UMA CARA NOVA, AQUELA QUE VOCÊ SONHOU EM TER? NOSSOS PROJETOS CHAMA MOLIX!!</p>
+            </div>
+        </div>
+    </div>
+</div>
         </div>
     </section>
 
